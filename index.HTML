@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builds Genshin</title>
+    <style>
+
+        /* esto es para que la imagen que puse del abismo se quede en el back ground */
+
+            body {
+            background-image: url('espiral del abismo.jpg');
+            background-attachment: fixed;
+            background-size: cover; 
+            background-position: center; 
+            }
+
+/*------------------------------------------------------------------------------------------------------------------------------ */
+
+            /*color del fondo donde dice builds genshin */
+            h1 {
+                font-size: 60px;               
+                font-family: 'Trajan Pro', serif;
+                background-color: #2e3043; 
+                color: #f8ebd5;     
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+                padding: 10px;                
+                text-align: center;
+                text-decoration: underline;  
+                transition: transform 0.3s ease, color 0.3s ease; 
+                position: relative;  
+                overflow: hidden;    
+            }
+
+            h1::before {
+                content: '';  
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(90deg, #ff7a18, #af002d, #3205a3); 
+                background-clip: text;  
+                color: transparent; 
+                z-index: -1; 
+                transition: background 0.3s ease;  
+            }
+
+            h1:hover {
+                transform: scale(1.2);  
+            }
+
+            h1:hover::before {
+                background: linear-gradient(90deg, #ff7a18, #af002d, #3205a3); 
+            }
+
+
+
+            h2 {
+            font-size: 50px;               
+            font-family: 'Trajan Pro', serif;
+            background-color: #2e3043;    
+            color: #f8ebd5;     
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+            padding: 10px;                
+            text-align: center;           
+        }
+
+
+
+            /*------------------------------------------------------------------------------------------------------------- */
+
+            /*este es del carrucel de imagenes que puse de genshin */
+
+            .carousel {
+                display: flex;
+                overflow: hidden;
+                width: 100%;
+                height: 400px;
+                margin-bottom: 0px;
+                position: relative;
+            }
+
+            .carousel img {
+                min-width: 100%;
+                height: auto;
+                transition: transform 5s ease;
+            }
+
+            @keyframes slide {
+                0% { transform: translateX(0); }
+                20% { transform: translateX(-100%); }
+                40% { transform: translateX(-200%); }
+                60% { transform: translateX(-300%); }
+                80% { transform: translateX(-400%); }
+                100% { transform: translateX(0); }
+            }
+
+            .carousel img {
+                animation: slide 25s infinite;
+            }
+
+
+      /*------------------------------------------------------------------------------------------------------------- */
+ /*la barra de navegacion de dps y eso */
+
+            nav {
+                background-color: #3e3639; 
+                padding: 10px; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                height: 50px; 
+            }
+
+
+            /* Contenedor de los elementos de la lista */
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            /* Elementos de la lista */
+            nav ul li {
+                margin: 0 10px; 
+            }
+
+            /* Estilo de los enlaces */
+            nav ul li a {
+                color: #f9d9a4; 
+                text-decoration: none; 
+                font-size: 1 rem; 
+                font-family: 'Georgia', 'Times New Roman', serif; 
+                text-transform: uppercase; 
+                letter-spacing: 2px; 
+                transition: all 0.3s ease; 
+            }
+
+            /* Efecto al pasar el cursor sobre los enlaces */
+            nav ul li a:hover {
+                color: #fff; 
+                text-decoration: underline; 
+                transform: scale(1.1); 
+                letter-spacing: 4px; 
+            }
+
+ /*------------------------------------------------------------------------------------------------------------- */
+            /* PARA LO DE LAS REDES SOCIALES */
+
+            .social-section {
+                text-align: center;
+                margin:25px 0;
+            }
+
+
+            .social-title {
+                font-family: 'Georgia', 'Times New Roman', serif; 
+                font-size: 2rem;
+                font-weight: bold;
+                background-color: #ffffff; 
+                color: #3e2c4d; 
+                padding: 15px;
+                border-radius: 25px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                letter-spacing: 2px; 
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+                transition: all 0.3s ease;
+            }
+
+           
+            .social-title:hover {
+                background-color: #3e2c4d; 
+                color: #fff; 
+                transform: scale(1.05); 
+            }
+
+           
+            .social-link {
+                color: #d4af37; 
+                font-size: 1.2rem;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 25px; 
+                background-color: #ffffff; 
+                display: inline-block;
+                transition: all 0.3s ease; 
+                margin: 0 10px;
+            }
+
+           
+            .social-link:hover {
+                background-color: #3e2c4d; 
+                transform: scale(1.1); 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+                color: #fff; 
+            }
+
+
+/*------------------------------------------------------------------------------------------------------------- */
+/*ESTO ES PARA COMO SE VEN MIS SECCIONES */
+
+            section {
+                padding: 20px;
+                text-align: center;
+            }
+
+          
+            section h2 {
+                font-family: 'Times New Roman', serif; 
+                font-size: 4rem;
+                margin-bottom: 10px;
+                color: #f9e7d3; 
+            }
+
+            
+            section p {
+                font-family: 'Times New Roman', serif; 
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: #f3ebea; 
+            }
+
+            
+            .image-grid {
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                gap: 10px;
+                justify-items: center;
+            }
+
+            
+            .image-grid img {
+                width: 100%;
+                max-width: 100px;
+                height: auto;
+                border-radius: 5px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+           
+            textarea {
+                width: 90%;
+                margin-top: 15px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                resize: none;
+            }
+
+            .pretty-button {
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 0.5rem 1rem;
+                background-color: #a8b59b;
+                color: black;
+                text-decoration: none;
+                border: 2px solid black; 
+                border-radius: 8px; 
+                font-weight: bold;
+                font-size: 1rem;
+                text-align: center;
+                transition: all 0.3s ease; 
+            }
+
+            .pretty-button:hover {
+                background-color: #695d8c;
+                color: white;
+                border-color: #695d8c; 
+                cursor: pointer; 
+            }
+
+
+/*------------------------------------------------------------------------------------------------------------- */
+            footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+            }
+
+
+            iframe {
+                width: 600px;  
+                height: 340px; 
+                border: none;  
+            }
+
+            video {
+                width: 500px;  
+                height: 400px; 
+                margin: 20px auto;
+                display: block;
+            }
+
+            .genshin-iframe {
+                width: 1000px; 
+                height: 600px; 
+                display: block; 
+                margin: 0 auto; 
+            }
+            .CALC-iframe {
+                width: 500px; 
+                height: 600px; 
+                display: block; 
+                margin: 0 auto; 
+            }
+
+            a.social-link {
+                color: #4A90E2;
+                font-size: 1.2rem;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+            a.social-link:hover {
+                text-decoration: underline;
+            }
+
+            @media (max-width: 768px) {
+                nav ul {
+                    flex-direction: column;
+                }
+
+                nav ul li {
+                    margin: 10px 0;
+                }
+
+                section h2 {
+                    font-size: 1.5rem;
+                }
+
+                .image-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .carousel img {
+                    height: 200px;
+                }
+            }
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+                .image-grid {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Builds Genshin</h1>
+    </header>
+
+
+     <div class="carousel">
+        <img src="furina.png" alt="Imagen 1">
+        <img src="xilonen.png" alt="Imagen 2">
+        <img src="kazuha.png" alt="Imagen 3">
+        <img src="benet.png" alt="Imagen 4">                
+        <img src="nahida.png" alt="Imagen 5">
+    </div>
+
+    <br>
+
+    <nav>
+        <ul>
+            <li><a href="#dps">DPS</a></li>
+            <li><a href="#sub-dps">Sub DPS</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#healer">Healer</a></li>
+            <li><a href="#shielder">Shielder</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#pagina">Pagina</a></li>
+            <li><a href="#calc">Calculadora</a></li>
+            <li><a href="#whats">WhatsApp</a></li>
+            <li><a href="#todo">To Do List</a></li>
+
+            <li><img src="espacio.png" alt="Instagram" width="50" height="50">
+            </a></li>
+            <li><img src="espacio.png" alt="Instagram" width="50" height="50">
+            </a></li>
+            <li> <a href="https://www.tiktok.com/@trinity8648?_t=ZM-8sH21XfIhPh&_r=1" target="_blank">
+                <img src="tiktok.png" alt="TikTok" width="30" height="30">
+            </a></li>
+            <li> <a href="https://youtube.com/@epopeyadedecarabian?si=ZkZCe3ryk35sZbrp" target="_blank">
+                <img src="youtube.png" alt="YouTube" width="30" height="30">
+            </a></li>
+            <li><a href="https://www.instagram.com/decarabian_313/profilecard/?igsh=MWVsdGl5a2h4ZTBsdQ==" target="_blank">
+                <img src="instagram.png" alt="Instagram" width="30" height="30">
+            </a></li>
+        </ul>
+    </nav>
+
+    <br>
+
+    <section class="social-section">
+        <p class="social-title">SIGUEME EN MIS REDES PARA MAS CONTENIDO UWU</p>
+    </section>
+    
+
+
+    <section id="dps" style="background-color: #2d272dae;">
+        <h2>DPS</h2>
+        <p>Los personajes DPS son los principales responsables de infligir daño en el equipo.</p>
+        <BR>
+            <BR>
+        <div class="image-grid">
+            <figure>
+                <a href="neuvillet.html">
+                    <img src="neuvillet.png" alt="Neuvillette">
+                </a>
+                <figcaption style="color: #ffffff;">Neuvillette</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="arlecchino.html">
+                    <img src="Arlecchino.png" alt="Arlecchino">
+                </a>
+                <figcaption style="color: #ffffff;">Arlecchino</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="alhacen.html">
+                    <img src="Alhacén.png" alt="Alhacén">
+                </a>
+                <figcaption style="color: #ffffff;">Alhacén</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="mualani.html">
+                    <img src="Mualani.png" alt="Mualani">
+                </a>
+                <figcaption style="color: #ffffff;">Mualani</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="kinich.html">
+                    <img src="Kinich.png" alt="Kinich">
+                </a>
+                <figcaption style="color: #ffffff;">Kinich</figcaption>
+            </figure>
+
+            <figure>
+                <a href="shogun.html">
+                    <img src="Shogun Raiden.png" alt="Shogun Raiden">
+                </a>
+                <figcaption style="color: #ffffff;">Shogun Raiden</figcaption>
+            </figure>
+
+            
+            <figure>
+                <a href="hu_tao.html">
+                    <img src="Hu Tao.png" alt="Hu Tao">
+                </a>
+                <figcaption style="color: #ffffff;">Hu Tao</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="navia.html">
+                    <img src="Navia.png" alt="Navia">
+                </a>
+                <figcaption style="color: #ffffff;">Navia</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="lyney.html">
+                    <img src="Lyney.png" alt="Lyney">
+                </a>
+                <figcaption style="color: #ffffff;">Lyney</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="gaming.html">
+                    <img src="Gaming.png" alt="Gaming">
+                </a>
+                <figcaption style="color: #ffffff;">Gaming</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="wriothesley.html">
+                    <img src="Wriothesley.png" alt="Wriothesley">
+                </a>
+                <figcaption style="color: #ffffff;">Wriothesley</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="chasca.html">
+                    <img src="Chasca.png" alt="Chasca">
+                </a>
+                <figcaption style="color: #ffffff;">Chasca</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="ayaka.html">
+                    <img src="Ayaka.png" alt="Ayaka">
+                </a>
+                <figcaption style="color: #ffffff;">Ayaka</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="clorinde.html">
+                    <img src="Clorinde.png" alt="Clorinde">
+                </a>
+                <figcaption style="color: #ffffff;">Clorinde</figcaption>
+            </figure>
+            
+            
+           
+        </div>
+        <textarea readonly placeholder="...">Los personajes DPS son clave para maximizar el daño en tu equipo. Elige uno que complemente las habilidades de tus otros personajes y que se ajuste a tu estilo de combate. Algunos DPS son ideales para ataques rápidos, mientras que otros brillan con habilidades de gran impacto. Asegúrate de aprovechar sus sinergias con personajes que aumenten su daño o les proporcionen elementos adicionales para activar reacciones elementales.</textarea>
+        <br>
+        <a href="#top" class="pretty-button">Volver al inicio</a>
+    </section>
+    
+
+
+
+    <section id="sub-dps" style="background-color: #5b526ab0;">
+        <h2>SUB-DPS</h2>
+        <p>Los personajes Sub-DPS son cruciales para potenciar el daño en el equipo al activar reacciones elementales y aportar daño adicional durante las habilidades y ultimate.</p>
+        <BR>
+            <BR>
+        <div class="image-grid">
+            
+
+            <figure>
+                <a href="furina.html">
+                    <img src="furina2.png" alt="Furina">
+                </a>
+                <figcaption style="color: #ffffff;">Furina</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="nahida.html">
+                    <img src="Nahida2.png" alt="Nahida">
+                </a>
+                <figcaption style="color: #ffffff;">Nahida</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="xingchiu.html">
+                    <img src="Xingchiu.png" alt="Xingchiu">
+                </a>
+                <figcaption style="color: #ffffff;">Xingchiu</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="yelan.html">
+                    <img src="Yelan.png" alt="Yelan">
+                </a>
+                <figcaption style="color: #ffffff;">Yelan</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="xiangling.html">
+                    <img src="Xiangling.png" alt="Xiangling">
+                </a>
+                <figcaption style="color: #ffffff;">Xiangling</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="shogun.html">
+                    <img src="Shogun Raiden.png" alt="Shogun Raiden">
+                </a>
+                <figcaption style="color: #ffffff;">Shogun Raiden</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="nilou.html">
+                    <img src="Nilou.png" alt="Nilou">
+                </a>
+                <figcaption style="color: #ffffff;">Nilou</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="fischil.html">
+                    <img src="Fischil.png" alt="Fischil">
+                </a>
+                <figcaption style="color: #ffffff;">Fischil</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="yaemiko.html">
+                    <img src="Yea Miko.png" alt="Yea Miko">
+                </a>
+                <figcaption style="color: #ffffff;">Yea Miko</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="kuki.html">
+                    <img src="Kuki.png" alt="Kuki">
+                </a>
+                <figcaption style="color: #ffffff;">Kuki</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="emilie.html">
+                    <img src="Émilie.png" alt="Émilie">
+                </a>
+                <figcaption style="color: #ffffff;">Émilie</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="chiori.html">
+                    <img src="Chiori.png" alt="Chiori">
+                </a>
+                <figcaption style="color: #ffffff;">Chiori</figcaption>
+            </figure>
+            
+          
+
+
+        </div>
+        <textarea readonly placeholder="...">Los personajes Sub-DPS son esenciales para maximizar el daño a largo plazo mediante reacciones elementales y habilidades de apoyo. Elige uno que complemente el estilo de tu DPS principal, ya que su función es proporcionar daño adicional sin necesidad de ser el foco principal del combate. Aprovecha sus habilidades para activar reacciones como Vaporizar, Derretir o Electro-Choque, y asegúrate de que sus elementos sincronicen bien con los de tu DPS para maximizar el daño total.</textarea>
+        <br>
+        <a href="#top" class="pretty-button">Volver al inicio</a>
+    </section>
+
+    
+
+    <section id="support" style="background-color: #222849b3;">
+        <h2>SUPPORT</h2>
+        <p>Los personajes de soporte mejoran las capacidades de tu equipo, proporcionando buffs y generando energía para tus personajes principales.</p>
+        <BR>
+            <BR>
+        <div class="image-grid">
+           
+            <figure>
+                <a href="furina.html">
+                    <img src="furina2.png" alt="Furina">
+                </a>
+                <figcaption style="color: #ffffff;">Furina</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="kazuha.html">
+                    <img src="Kazuha2.png" alt="Kazuha">
+                </a>
+                <figcaption style="color: #ffffff;">Kazuha</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="xilonen.html">
+                    <img src="Xilonen2.png" alt="Xilonen">
+                </a>
+                <figcaption style="color: #ffffff;">Xilonen</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="bennett.html">
+                    <img src="Bennett.png" alt="Bennett">
+                </a>
+                <figcaption style="color: #ffffff;">Bennett</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="nahida.html">
+                    <img src="Nahida2.png" alt="Nahida">
+                </a>
+                <figcaption style="color: #ffffff;">Nahida</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="zhongli.html">
+                    <img src="Zhongli.png" alt="Zhongli">
+                </a>
+                <figcaption style="color: #ffffff;">Zhongli</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="baizhu.html">
+                    <img src="Baizhu.png" alt="Baizhu">
+                </a>
+                <figcaption style="color: #ffffff;">Baizhu</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="kokomi.html">
+                    <img src="Kokomi.png" alt="Kokomi">
+                </a>
+                <figcaption style="color: #ffffff;">Kokomi</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="shogun.html">
+                    <img src="Shogun Raiden.png" alt="Shogun Raiden">
+                </a>
+                <figcaption style="color: #ffffff;">Shogun Raiden</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="mona.html">
+                    <img src="Mona.png" alt="Mona">
+                </a>
+                <figcaption style="color: #ffffff;">Mona</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="xianyun.html">
+                    <img src="Xianyun.png" alt="Xianyun">
+                </a>
+                <figcaption style="color: #ffffff;">Xianyun</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="shenhe.html">
+                    <img src="Shenhe.png" alt="Shenhe">
+                </a>
+                <figcaption style="color: #ffffff;">Shenhe</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="jean.html">
+                    <img src="Jean.png" alt="Jean">
+                </a>
+                <figcaption style="color: #ffffff;">Jean</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="chevreuse.html">
+                    <img src="Chevreuse.png" alt="Chevreuse">
+                </a>
+                <figcaption style="color: #ffffff;">Chevreuse</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="sacarosa.html">
+                    <img src="Sacarosa.png" alt="Sacarosa">
+                </a>
+                <figcaption style="color: #ffffff;">Sacarosa</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="faruzan.html">
+                    <img src="Faruzán.png" alt="Faruzán">
+                </a>
+                <figcaption style="color: #ffffff;">Faruzán</figcaption>
+            </figure>
+            
+            
+        </div>
+        <textarea readonly placeholder="...">Los personajes de soporte son fundamentales para potenciar a tu equipo, mejorando tanto las capacidades ofensivas como defensivas. Aportan beneficios como aumentar el daño, proporcionar recarga de energía, o generar efectos de campo que facilitan la activación de reacciones elementales. Elige un soporte que se ajuste a las necesidades de tu equipo y ayude a optimizar las habilidades de tus DPS y Sub-DPS, asegurando que el equipo pueda mantener un flujo constante de energía y daño.</textarea>
+        <br>
+        <a href="#top" class="pretty-button">Volver al inicio</a>
+    </section>
+
+
+
+    <section id="healer" style="background-color: #4e5068b4;">
+        <h2>HEALER</h2>
+        <p>Los personajes sanadores mantienen a tu equipo con vida, proporcionando curación constante o en momentos críticos.</p>
+        <BR>
+            <BR>
+        <div class="image-grid">
+
+            <figure>
+                <a href="kokomi.html">
+                    <img src="Kokomi.png" alt="Kokomi">
+                </a>
+                <figcaption style="color: #ffffff;">Kokomi</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="bennett.html">
+                    <img src="Bennett.png" alt="Bennett">
+                </a>
+                <figcaption style="color: #ffffff;">Bennett</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="qiqi.html">
+                    <img src="Qiqi.png" alt="Qiqi">
+                </a>
+                <figcaption style="color: #ffffff;">Qiqi</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="diona.html">
+                    <img src="Diona.png" alt="Diona">
+                </a>
+                <figcaption style="color: #ffffff;">Diona</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="sigewinne.html">
+                    <img src="Sigewinne.png" alt="Sigewinne">
+                </a>
+                <figcaption style="color: #ffffff;">Sigewinne</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="sayu.html">
+                    <img src="Sayu.png" alt="Sayu">
+                </a>
+                <figcaption style="color: #ffffff;">Sayu</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="barbara.html">
+                    <img src="Barbara.png" alt="Barbara">
+                </a>
+                <figcaption style="color: #ffffff;">Barbara</figcaption>
+            </figure>
+            
+            <figure>
+                <a href="kuki.html">
+                    <img src="Kuki.png" alt="Kuki">
+                </a>
+                <figcaption style="color: #ffffff;">Kuki</figcaption>
+            </figure>
+            
+           
+
+
+        </div>
+
+        <textarea readonly placeholder="...">Los personajes sanadores son cruciales para la supervivencia del equipo, restaurando la salud durante las batallas. Además de curar, algunos también pueden aplicar buffs defensivos o mejorar la regeneración de energía. Es importante contar con un sanador que se ajuste a las necesidades de curación, ya sea proporcionando una curación continua en campo o curando en momentos clave, asegurando que tu equipo se mantenga con vida en todo momento, incluso en los combates más intensos.</textarea>
+        <br>
+        <a href="#top" class="pretty-button">Volver al inicio</a>
+    </section>
+
+
+        <section id="shielder" style="background-color: #393861b6;">
+            <h2>SHILDER</h2>
+            <p>Los personajes de escudo protegen a tu equipo de grandes cantidades de daño, permitiendo que tus DPS sigan luchando sin interrupciones.</p>
+            <BR>
+                <BR>
+            <div class="image-grid">
+                
+                <figure>
+                    <a href="zhongli.html">
+                        <img src="Zhongli.png" alt="Zhongli">
+                    </a>
+                    <figcaption style="color: #ffffff;">Zhongli</figcaption>
+                </figure>
+                
+                <figure>
+                    <a href="thoma.html">
+                        <img src="Thoma.png" alt="Thoma">
+                    </a>
+                    <figcaption style="color: #ffffff;">Thoma</figcaption>
+                </figure>
+                
+                <figure>
+                    <a href="diona.html">
+                        <img src="Diona.png" alt="Diona">
+                    </a>
+                    <figcaption style="color: #ffffff;">Diona</figcaption>
+                </figure>
+                
+                <figure>
+                    <a href="noelle.html">
+                        <img src="Noelle.png" alt="Noelle">
+                    </a>
+                    <figcaption style="color: #ffffff;">Noelle</figcaption>
+                </figure>
+                
+                <figure>
+                    <a href="ninguang.html">
+                        <img src="Ninguang.png" alt="Ninguang">
+                    </a>
+                    <figcaption style="color: #ffffff;">Ninguang</figcaption>
+                </figure>
+                
+                <figure>
+                    <a href="albedo.html">
+                        <img src="Albedo.png" alt="Albedo">
+                    </a>
+                    <figcaption style="color: #ffffff;">Albedo</figcaption>
+                </figure>
+                
+                <figure>
+                    <a href="yanfei.html">
+                        <img src="Yanfei.png" alt="Yanfei">
+                    </a>
+                    <figcaption style="color: #ffffff;">Yanfei</figcaption>
+                </figure>
+                
+                <figure>
+                    <a href="yunjin.html">
+                        <img src="Yun Jin.png" alt="Yun Jin">
+                    </a>
+                    <figcaption style="color: #ffffff;">Yun Jin</figcaption>
+                </figure>
+                
+
+            </div>
+
+            <textarea readonly placeholder="...">Los personajes de escudo son esenciales para proteger a tu equipo de daños fuertes, especialmente en combates donde los enemigos infligen grandes cantidades de daño. Un buen escudo permite que tus personajes DPS y Sub-DPS sigan atacando sin miedo a ser derrotados por un golpe fatal. Algunos personajes de escudo también aprovechan reacciones elementales para mejorar su efectividad, ofreciendo una capa adicional de estrategia y defensa. Asegúrate de elegir un escudo fuerte que combine bien con tu equipo y permita mantener a tus personajes seguros mientras infligen daño.</textarea>
+            <br>
+            <a href="#top" class="pretty-button">Volver al inicio</a>
+        </section>
+
+        
+
+
+        <section id="videos" style="background-color: #2d272dae;">
+            <h2>Videos Relacionados</h2>
+            <section>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TAlKhARUcoY?si=qOJEnDrbcZtHHLKO" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/lMdsrZ1otlA?si=HhJRGV_s9HCItKZ9" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+            </section>
+            <br>
+            <div align="center">
+                <a href="#top" class="pretty-button">Volver al inicio</a>
+            </div>
+        </section>
+
+
+        <section id="pagina" style="background-color: #2d272dae;"></section>
+            <h2>Pagina oficial de Genshin Impact</h2>
+            <iframe src="https://genshin.hoyoverse.com/es/" title="Página de Genshin Impact" class="genshin-iframe" width="800" height="400"></iframe>
+            <br>
+            <div align="center">
+                <a href="#top" class="pretty-button">Volver al inicio</a>
+            </div>
+        </section>
+
+
+        <section id="calc" style="background-color: #2d272dae;"></section>
+                <h2>CALCULA EL DAÑO DE TUS PERSONAJES</h2>
+                <iframe src="CALCULADORA.HTML" title="Página de Genshin Impact" class="genshin-iframe" width="1000" height="600"></iframe>
+                <div align="center">
+                    <a href="#top" class="pretty-button">Volver al inicio</a>
+                </div>
+        </section>
+
+
+        <section id="whats" style="background-color: #2d272dae;"></section>
+                <br>
+                <h2>MENSAJE A WHATSAPP</h2>
+                <iframe src="whats.html" title="Página de Genshin Impact" class="genshin-iframe" width="1000" height="600"></iframe>
+                <br>
+                <div align="center">
+                    <a href="#top" class="pretty-button">Volver al inicio</a>
+                </div>
+        </section>
+
+        <section id="todo" style="background-color: #2d272dae;"></section>
+                <br>
+                <h2>TO DO LIST</h2>
+                <iframe src="TODO.HTML" title="Página de Genshin Impact" class="genshin-iframe" width="1000" height="600"></iframe>
+                <br>
+                <div align="center">
+                    <a href="#top" class="pretty-button">Volver al inicio</a>
+                </div>
+        </section>
+
+        
+
+
+        <footer style="background-color: #2e3043; color: #f8ebd5; padding: 30px 0; text-align: center; font-family: 'Arial', sans-serif; border-top: 2px solid #f8ebd5;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+
+
+                <div>
+                    <p style="color: #f8ebd5; font-size: 14px;">&copy; 2024 Decarabain. Todos los derechos reservados.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <a href="https://www.tiktok.com/@trinity8648?_t=ZM-8sH21XfIhPh&_r=1" target="_blank" style="margin: 0 10px;">
+                        <img src="tiktok.png" alt="TikTok" style="width: 30px; height: auto;">
+                    </a>
+                    <a href="https://youtube.com/@epopeyadedecarabian?si=ZkZCe3ryk35sZbrp" target="_blank" style="margin: 0 10px;">
+                        <img src="youtube.png" alt="YouTube" style="width: 30px; height: auto;">
+                    </a>
+                    <a href="https://www.instagram.com/decarabian_313/profilecard/?igsh=MWVsdGl5a2h4ZTBsdQ==" target="_blank" style="margin: 0 10px;">
+                        <img src="instagram.png" alt="Instagram" style="width: 30px; height: auto;">
+                    </a>
+                </div>
+                
+            </div>
+        </footer>
+        
+        
+        
+
+
+    </body>
+    </html>
